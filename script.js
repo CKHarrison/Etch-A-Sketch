@@ -44,8 +44,8 @@ newGrid.addEventListener('click', () => {
 
 function userInput(property) {
   let num = parseInt(prompt(`Please enter number of desired ${property}: `))
-  if(num > 100) {
-    num = parseInt(prompt("Number must be no more than 100"))
+  if(num < 0 || num > 100) {
+    num = parseInt(prompt("Number must be more than 0 and no more than 100"))
   }
   return num;
 }
