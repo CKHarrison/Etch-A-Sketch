@@ -1,0 +1,60 @@
+*:root {
+  box-sizing: border-box;
+  --grid-columns: 1;
+  --grid-rows: 1;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+}
+
+button {
+  background-color: plum;
+  border: 1px solid plum;
+  border-radius: .5em;
+  padding: .5em;
+  color: white;
+}
+
+button:hover {
+  background-color: rgb(65, 29, 65);
+}
+
+button:active {
+  background-color: rgb(65, 29, 65);
+  transform: translateY(4px);
+  box-shadow: 0 5px #666;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  margin: .5em;
+}
+
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  grid-template-rows: repeat(var(--grid-rows), 1fr);
+  height: 100vh;
+}
+
+.item {
+  padding: 1em;
+  border: 1px solid pink;
+  max-width: 200px;
+  max-height: 200px;
+  
+  color: white;
+}
+
+.bg {
+  background-color: aqua;
+}
+
+/* button styles */
+
+
