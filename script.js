@@ -1,40 +1,33 @@
-const container = document.querySelector('.container');
+
 const resetBtn = document.querySelector('.reset');
 const newGrid = document.querySelector('.create-grid');
 let boxes;
 
 function makeGrid(rows, columns) {
+  const container = document.querySelector('.container');
+  while(container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
   container.style.setProperty('--grid-rows', rows);
   container.style.setProperty('--grid-columns', columns);
   for(let i = 0; i < (rows * columns); i++) {
     let cell = document.createElement('div');
-    // cell.innerText = (i + 1);
+    cell.innerText = (i + 1);
     container.appendChild(cell).className = 'item';
   }
+  hoverEffect()
 }
 
 makeGrid(16,16);
 
-function hoverEffect(boxes=null) {
-  if (boxes === null) {
-    const boxes = document.querySelectorAll('.item');
-    boxes.forEach(box => {
-      box.addEventListener('mouseover', () => {
-        box.classList.toggle('bg');
-      });
-    });
-    return boxes;
-  }
+function hoverEffect() {
+   boxes = document.querySelectorAll('.item');
   boxes.forEach(box => {
     box.addEventListener('mouseover', () => {
       box.classList.toggle('bg');
     });
   });
 }
-
-boxes = hoverEffect();
-
-
 
 // reset grid
 resetBtn.addEventListener('click', () =>{
@@ -46,7 +39,7 @@ newGrid.addEventListener('click', () => {
   rows = userInput('rows')
   cols = userInput('columns');
   makeGrid(rows, cols);
-  hoverEffect()
+  // hoverEffect()
 });
 
 function userInput(property) {
