@@ -8,7 +8,7 @@
   box-sizing: inherit;
   margin: 0;
 }
-
+/* button styles */
 button {
   background-color: plum;
   border: 1px solid plum;
@@ -34,27 +34,41 @@ button:active {
   margin: .5em;
 }
 
+/* layout styles */
+h1{
+  margin-top: .5em;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 
 .container {
+  width: 100%;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(var(--grid-columns), 1fr);
   grid-template-rows: repeat(var(--grid-rows), 1fr);
-  height: 100vh;
+  min-height: 0;
+  min-width: 0;
+  
 }
 
 .item {
   padding: 1em;
-  border: 1px solid pink;
+  border: 1px solid black;
   max-width: 200px;
   max-height: 200px;
-  
+  overflow: hidden;
+  min-width: 0;
   /* color: white; */
 }
 
 .bg {
-  background-color: aqua;
+  background-color: black;
 }
-
-/* button styles */
-
-
